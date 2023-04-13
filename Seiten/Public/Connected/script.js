@@ -12,7 +12,6 @@ window.onload = () => {
             }
         )
         .then(res => {
-            console.log(resp)
             if (res.status == 200) {
                 return res.json();
             }
@@ -24,7 +23,7 @@ window.onload = () => {
             window.location.href = `${MAIN}/dashboard/servers`;
         })
         .catch(err => {
-            console.log(err);
+            alert(err);
             window.location.href = `${MAIN}`;
         })
     } else {
