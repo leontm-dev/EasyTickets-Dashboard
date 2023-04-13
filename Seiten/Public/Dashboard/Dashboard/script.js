@@ -2,7 +2,7 @@ const MAIN = "https://easytickets-dashboard.leontm-official.repl.co"
 window.onload = () => {
     if (localStorage.getItem("EasyTickets-User") != null) {
         let ID = String(window.location.href).replace(`${MAIN}/dashboard/servers/id=`, "");
-        fetch(`http://localhost:2000/api/servers/${ID}`, {
+        fetch(`${MAIN}/api/servers/${ID}`, {
             method: "GET",
         })
         .then(res => {
