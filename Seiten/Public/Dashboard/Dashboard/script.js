@@ -1,6 +1,7 @@
+const MAIN = "https://easytickets-dashboard.leontm-official.repl.co"
 window.onload = () => {
     if (localStorage.getItem("EasyTickets-User") != null) {
-        let ID = String(window.location.href).replace("http://localhost:2000/dashboard/servers/id=", "");
+        let ID = String(window.location.href).replace(`${MAIN}/dashboard/servers/id=`, "");
         fetch(`http://localhost:2000/api/servers/${ID}`, {
             method: "GET",
         })
@@ -9,7 +10,7 @@ window.onload = () => {
                 return res.json();
             } else if (res.status == 404) {
                 alert("Server konnte nicht gefunden werden!");
-                window.location.href = "http://localhost:2000/dashboard/servers"
+                window.location.href = `${MAIN}/dashboard/servers`
             }
         })
         .then(data => {
@@ -23,6 +24,6 @@ window.onload = () => {
         })
     } else {
         alert("Kein Nutzer gefunden!");
-        window.location.href = "http://localhost:2000";
+        window.location.href = `${MAIN}`;
     }
 }

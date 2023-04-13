@@ -1,6 +1,7 @@
+const MAIN = "https://easytickets-dashboard.leontm-official.repl.co";
 window.onload = () => {
     if (String(window.location.href).includes("#token_type")) {
-        let URL = String(window.location.href).replace("http://localhost:2000/connected/#", "")
+        let URL = String(window.location.href).replace(`${MAIN}/connected/#`, "")
         let params = new URLSearchParams(URL);
         fetch("https://discord.com/api/v10/users/@me",
             {
@@ -19,14 +20,14 @@ window.onload = () => {
             let USER = JSON.parse(JSON.stringify(data));
             USER.token = params.get("access_token");
             localStorage.setItem("EasyTickets-User", JSON.stringify(USER));
-            window.location.href = "http://localhost:2000/dashboard/servers";
+            window.location.href = `${MAIN}/dashboard/servers`;
         })
         .catch(err => {
             alert(err);
-            window.location.href = "http://localhost:2000";
+            window.location.href = `${MAIN}`;
         })
     } else {
         alert("Ein Fehler ist aufgetreten, klicken sie auf OK um zurück geleitet zu werden!");
-        window.location.href = "http://localhost:2000";
+        window.location.href = `${MAIN}`;
     };
 };

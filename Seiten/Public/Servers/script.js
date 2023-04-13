@@ -1,3 +1,4 @@
+const MAIN = "https://easytickets-dashboard.leontm-official.repl.co";
 function addServer(name, icon, type, id) {
     let server = document.createElement("div");
     server.classList.add("server");
@@ -14,7 +15,7 @@ function addServer(name, icon, type, id) {
         dashboard.classList.add("server-dashboard");
         dashboard.innerHTML = "Dashboard";
         dashboard.addEventListener("click", (ev) => {
-            window.location.href = `http://localhost:2000/dashboard/servers/id=${id}`;
+            window.location.href = `${MAIN}/dashboard/servers/id=${id}`;
         });
         server.appendChild(dashboard);
     } else {
@@ -53,7 +54,7 @@ window.onload = () => {
         .then(data => {
             data.forEach(i => {
                 if (i.owner || i.permission & 0x20) {
-                    fetch("http://localhost:2000/api/servers", {
+                    fetch(`${MAIN}/api/servers`, {
                         method: "GET"
                     })
                     .then(res => res.json())
@@ -69,6 +70,6 @@ window.onload = () => {
         })
     } else {
         alert("Kein Nutzer gefunden!");
-        window.location.href = "http://localhost:2000"
+        window.location.href = `${MAIN}`
     };
 };
