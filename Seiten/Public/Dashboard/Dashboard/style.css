@@ -139,9 +139,9 @@ body {
 }
 .menu-point {
     position: relative;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 60px;
-    margin: 0;
+    margin: 0 0 0 10px;
     background-color: #219ebc;
     font-size: 40px;
     vertical-align: middle;
