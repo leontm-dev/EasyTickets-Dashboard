@@ -4,7 +4,7 @@ const env = require("dotenv").config();
 const path = require("path");
 
 // Daten
-const SERVER = editJsonFile(`${require("/server.js")}/Daten/Discord/servers.json`);
+const SERVER = editJsonFile(`/home/runner/EasyTickets-Dashboard/Daten/Discord/servers.json`);
 
 // Code
 

@@ -32,4 +32,3 @@ const DASHBOARD = require("./Routen/dashboard");
 app.use("/dashboard/servers", DASHBOARD);
 const API = require("./Routen/api");
 app.use("/api", API);
-module.exports = __dirname;
