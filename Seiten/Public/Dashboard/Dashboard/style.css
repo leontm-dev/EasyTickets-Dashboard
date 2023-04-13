@@ -163,6 +163,8 @@ body {
     text-overflow: ellipsis;
     font-size: 30px;
     font-family: "Mulish";
+    vertical-align: middle;
+    line-height: 60px
 }
 .menu-item-img {
     position: absolute;
