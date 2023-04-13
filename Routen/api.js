@@ -4,7 +4,7 @@ const env = require("dotenv").config();
 const path = require("path");
 
 // Daten
-const SERVER = editJsonFile("C:/Users/LAnne/Desktop/Meine Projekte/Idee/EasyTickets/Dashboard/Daten/Discord/servers.json");
+const SERVER = editJsonFile(String(__dirname).replace("Routen/api.js", "Daten/Discord/servers.json"));
 
 // Code
 
