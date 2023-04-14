@@ -1,4 +1,5 @@
-const MAIN = "https://easytickets-dashboard.leontm-official.repl.co"
+const MAIN = "https://easytickets-dashboard.leontm-official.repl.co";
+let ID = String(window.location.href).replace(`${MAIN}/dashboard/servers/id=`, "");
 window.onload = () => {
     document.getElementById("user-menu").style.display = "none";
     document.getElementById("user-menu-button").addEventListener("click", (ev) => {
@@ -6,7 +7,6 @@ window.onload = () => {
     });
     if (localStorage.getItem("EasyTickets-User") != null) {
         document.getElementById("user-menu-button").src = `https://cdn.discordapp.com/avatars/${USER.id}/${USER.avatar}.png`;
-        let ID = String(window.location.href).replace(`${MAIN}/dashboard/servers/id=`, "");
         fetch(`${MAIN}/api/servers/${ID}`, {
             method: "GET",
         })
@@ -35,4 +35,19 @@ window.onload = () => {
 document.getElementById("user-menu-item-logout").addEventListener("click", (ev) => {
     localStorage.removeItem("EasyTickets-User");
     window.location.href = MAIN;
+});
+document.getElementById("menu-item-tickets").addEventListener("click", (ev) => {
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/tickets`;
+});
+document.getElementById("menu-item-new").addEventListener("click", (ev) => {
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/new`;
+});
+document.getElementById("menu-item-prebuilds").addEventListener("click", (ev) => {
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/prebuilds`;
+});
+document.getElementById("menu-item-support").addEventListener("click", (ev) => {
+    window.location.href = `https://discord.gg/c65w5guMDq`;
+});
+document.getElementById("menu-item-donate").addEventListener("click", (ev) => {
+    window.location.href = `https://www.buymeacoffee.com/leontm`;
 });
