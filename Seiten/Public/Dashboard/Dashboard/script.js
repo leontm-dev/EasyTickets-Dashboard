@@ -6,7 +6,7 @@ window.onload = () => {
         document.getElementById("user-menu").style.display = "unset";
     });
     if (localStorage.getItem("EasyTickets-User") != null) {
-        document.getElementById("user-menu-button").src = `https://cdn.discordapp.com/avatars/${USER.id}/${USER.avatar}.png`;
+        document.getElementById("user-menu-button").src = `https://cdn.discordapp.com/avatars/${JSON.parse(localStorage.getItem("EasyTickets-User")).id}/${JSON.parse(localStorage.getItem("EasyTickets-User")).avatar}.png`;
         fetch(`${MAIN}/api/servers/${ID}`, {
             method: "GET",
         })
