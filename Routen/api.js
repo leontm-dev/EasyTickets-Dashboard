@@ -28,6 +28,7 @@ router.get(`/servers/:id`, (req, res) => {
     }
 });
 router.post("/servers/new/:id/:content", (req, res) => {
+    console.log(req.params.id)
     SERVER.set(req.params.id, JSON.parse(req.params.content));
     SERVER.append("SERVERS", req.params.id);
     SERVER.save();
@@ -36,8 +37,7 @@ router.post("/servers/new/:id/:content", (req, res) => {
 router.delete("/servers/del/:id", (req, res) => {
     SERVER.unset(req.params.id);
     let array = SERVER.get("SERVERS");
-    console.log(array);
-    array.splice(array.indexOf(req.params.id));
+    array.slice(array.indexOf(req.params.id));
     SERVER.set("SERVERS", array);
     SERVER.save();
     res.status(200).json({message: "Erfolg!"});
