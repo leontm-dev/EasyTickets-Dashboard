@@ -73,3 +73,7 @@ window.onload = () => {
         window.location.href = `${MAIN}`
     };
 };
+document.getElementById("user-menu-item-logout").addEventListener("click", (ev) => {
+    localStorage.removeItem("EasyTickets-User");
+    window.location.href = MAIN;
+});

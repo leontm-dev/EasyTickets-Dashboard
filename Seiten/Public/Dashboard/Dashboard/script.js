@@ -1,6 +1,11 @@
 const MAIN = "https://easytickets-dashboard.leontm-official.repl.co"
 window.onload = () => {
+    document.getElementById("user-menu").style.display = "none";
+    document.getElementById("user-menu-button").addEventListener("click", (ev) => {
+        document.getElementById("user-menu").style.display = "unset";
+    });
     if (localStorage.getItem("EasyTickets-User") != null) {
+        document.getElementById("user-menu-button").src = `https://cdn.discordapp.com/avatars/${USER.id}/${USER.avatar}.png`;
         let ID = String(window.location.href).replace(`${MAIN}/dashboard/servers/id=`, "");
         fetch(`${MAIN}/api/servers/${ID}`, {
             method: "GET",
@@ -26,4 +31,8 @@ window.onload = () => {
         alert("Kein Nutzer gefunden!");
         window.location.href = `${MAIN}`;
     }
-}
+};
+document.getElementById("user-menu-item-logout").addEventListener("click", (ev) => {
+    localStorage.removeItem("EasyTickets-User");
+    window.location.href = MAIN;
+});
