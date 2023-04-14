@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const editJsonFile = require("edit-json-file");
+var DotJson = require('dot-json');
 const env = require("dotenv").config();
 const path = require("path");
 
 // Daten
-const SERVER = editJsonFile(`/home/runner/EasyTickets-Dashboard/Daten/Discord/servers.json`);
+const SERVER = new DotJson(`/home/runner/EasyTickets-Dashboard/Daten/Discord/servers.json`);
 
 // Code
 
