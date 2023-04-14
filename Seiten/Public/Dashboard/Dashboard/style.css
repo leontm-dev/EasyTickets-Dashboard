@@ -137,6 +137,18 @@ body {
     background-color: #219ebc;
     overflow-y: scroll;
 }
+.menu-bar::-webkit-scrollbar {
+    width: 2px;
+}
+.menu-bar::-webkit-scrollbar-track {
+    width: 2px;
+    background-color: transparent;
+}
+.menu-bar::-webkit-scrollbar-thumb {
+    width: 2px;
+    border-radius: 1px;
+    background-color: black;
+}
 .menu-point {
     position: relative;
     width: calc(100% - 10px);
