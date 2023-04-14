@@ -28,8 +28,7 @@ router.get(`/servers/:id`, (req, res) => {
     }
 });
 router.post("/servers/new/:id/:content", (req, res) => {
-    console.log(req.params.id)
-    SERVER.set(req.params.id, JSON.parse(req.params.content));
+    SERVER.set(JSON.parse(req.params.content).id, JSON.parse(req.params.content));
     SERVER.append("SERVERS", req.params.id);
     SERVER.save();
     res.status(200).json({message: "Erfolg!"});
