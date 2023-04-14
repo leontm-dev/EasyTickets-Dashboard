@@ -18,7 +18,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Seiten/Views"));
 app.use(express.static(path.join(__dirname, "Seiten/Public")))
-app.listen(2000, () => {
+app.listen(() => {
     console.log("Hallo");
 });
 app.get("/", (req, res) => {
