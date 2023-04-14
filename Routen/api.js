@@ -34,7 +34,7 @@ router.post("/servers/new/:id/:content", (req, res) => {
     res.status(200).json({message: "Erfolg!"});
 });
 router.delete("/servers/del/:id", (req, res) => {
-    SERVER.unset(req.params.id);
+    SERVER.delete(req.params.id);
     let array = SERVER.get("SERVERS");
     array.splice(array.indexOf(req.params.id));
     SERVER.set("SERVERS", array);
