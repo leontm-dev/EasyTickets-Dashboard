@@ -179,3 +179,44 @@ body {
 .menu-point:hover {
     cursor: pointer;
 }
+.menu-items {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    width: calc(100% - 300px);
+    height: 100vh;
+    display: inline-block;
+}
+.item {
+    position: relative;
+    margin: 40px;
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 200px;
+    max-width: 300px;
+    background-color: #ffb703;
+    box-shadow: #219ebc 2px 2px 2px 1px;
+}
+.item-name {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    font-size: 30px;
+    font-family: "Mulish";
+    vertical-align: middle;
+    line-height: 50px;
+}
+.item-img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+.item-details {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    font-size: 20px;
+    font-family: "Mulish";
+}
