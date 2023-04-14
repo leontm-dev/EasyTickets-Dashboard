@@ -185,8 +185,7 @@ body {
     left: 300px;
     width: calc(100% - 300px);
     height: 100vh;
-    display: flex;
-    justify-content: space-around;
+    display: inline-flexbox;
 }
 .item {
     position: relative;
@@ -209,7 +208,7 @@ body {
 }
 .item-img {
     position: absolute;
-    top: 20px;
+    top: 15px;
     left: 10px;
     width: 30px;
     height: 30px;
