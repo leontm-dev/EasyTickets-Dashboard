@@ -17,7 +17,7 @@ window.onload = () => {
             console.log(data);
             document.getElementById("server-img").src = `https://cdn.discordapp.com/icons/${data.id}/${data.icon}.png`;
             document.getElementById("server-name").innerText = data.name;
-            document.getElementById("server-member").innerText = `${data.member_count} Member`
+            document.getElementById("server-member").innerText = `${data.memberCount} Member`
         })
         .catch(err => {
             console.log(err);
