@@ -37,13 +37,13 @@ document.getElementById("user-menu-item-logout").addEventListener("click", (ev) 
     window.location.href = MAIN;
 });
 document.getElementById("menu-item-tickets").addEventListener("click", (ev) => {
-    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/tickets`;
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID.replace("/new", "")}/tickets`;
 });
 document.getElementById("menu-item-new").addEventListener("click", (ev) => {
-    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/new`;
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID.replace("/new", "")}/new`;
 });
 document.getElementById("menu-item-prebuilds").addEventListener("click", (ev) => {
-    window.location.href = `${MAIN}/dashboard/servers/id=${ID}/prebuilds`;
+    window.location.href = `${MAIN}/dashboard/servers/id=${ID.replace("/new", "")}/prebuilds`;
 });
 document.getElementById("menu-item-support").addEventListener("click", (ev) => {
     window.location.href = `https://discord.gg/c65w5guMDq`;
