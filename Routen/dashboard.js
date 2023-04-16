@@ -9,5 +9,13 @@ router.get("/", (req, res) => {
 router.get("/?id=:id/", (req, res) => {
     res.render("Dashboard/dashboard", { id: req.params.id })
 });
-
+router.get("/?id=:id/tickets", (req, res) => {
+    res.render("Dashboard/tickets");
+});
+router.get("/?id=:id/new", (req, res) => {
+    res.render("Dashboard/new");
+});
+router.get("/?id=:id/prebuilds", (req, res) => {
+    res.render("Dashboard/Prebuilds/main");
+});
 module.exports = router;
