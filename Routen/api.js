@@ -43,4 +43,21 @@ router.delete("/servers/del/:id", (req, res) => {
     SERVER.save();
     res.status(200).json({message: "Erfolg!"});
 });
+router.get("/tickets/new/:id/:content", (req, res) => {
+    let index = SERVER.get(`${req.params.id}.index`, (value) => {
+        if (typeof value === String) {
+            return value;
+        } else {
+            SERVER.set(`${req.params.id}`, {index: "0"});
+            SERVER.save();
+            return "0";
+        }
+    });
+    SERVER.set(`${req.params.id}.${index}`, JSON.parse(req.params.content));
+    SERVER.set(`${req.params.id}.index`, SERVER.get(`${req.params.id}.index`, (value) => {
+        return String(parseInt(value) + 1);
+    }));
+    SERVER.save();
+    res.status(200).json({message: "Erfolg"});
+})
 module.exports = router;
